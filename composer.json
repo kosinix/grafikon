@@ -1,0 +1,25 @@
+{
+    "name": "kosinix/grafikon",
+    "description": "A small image editor for PHP.",
+    "keywords": ["resize","crop","smartcrop"],
+    "homepage": "http://kosinix.github.io/grafikon",
+    "type": "library",
+    "license": [
+        "MIT",
+        "GPL-2.0+"
+    ],
+    "authors": [
+        {
+            "name": "Nico Amarilla",
+            "homepage": "https://www.kosinix.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.2"
+    },
+    "autoload": {
+        "psr-0": {
+            "": "src/"
+        }
+    }
+}
