@@ -17,6 +17,8 @@ A smaller subset of [Grafika](https://kosinix.github.io/grafika) that works in P
 [https://packagist.org/packages/kosinix/grafikon](https://packagist.org/packages/kosinix/grafikon)
 
 ## License
-Choose one of the two license.
-- MIT License
-- GPL 3
+Grafikon is dual licensed:
+- MIT
+- GPL-2.0+
+
+Liberation Sans is licensed under SIL Open Font License.
