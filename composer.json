@@ -1,7 +1,7 @@
 {
     "name": "kosinix/grafikon",
     "description": "A small image editor for PHP.",
-    "keywords": ["resize","crop","smartcrop"],
+    "keywords": ["resize","crop","smartcrop","animated-gif"],
     "homepage": "http://kosinix.github.io/grafikon",
     "type": "library",
     "license": [
