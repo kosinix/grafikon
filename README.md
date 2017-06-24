@@ -13,6 +13,18 @@ A smaller subset of [Grafika](https://kosinix.github.io/grafika) that works in P
 * Transforms: flip, rotate
 * Supported images: JPG, PNG, GIF, Animated GIF (Works even if you only have GD installed)
 
+## Usage
+
+`
+require_once 'src/autoloader.php';
+
+$editor = Grafikon::createEditor(); // Will try and create Imagick editor or fallback to GD
+$image = $editor->open('image.jpeg');
+$editor->resize($image, 200, 100, 'fit');
+$editor->save('out.png');
+
+`
+
 ## Packagist
 [https://packagist.org/packages/kosinix/grafikon](https://packagist.org/packages/kosinix/grafikon)
 

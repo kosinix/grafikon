@@ -38,4 +38,4 @@ before_script:
 
 script:
   - php /home/travis/build/kosinix/grafikon/tests/test-gd.php
-  - php /home/travis/build/kosinix/grafikon/tests/test-imagick.php -d zend.enable_gc=0
+  - php /home/travis/build/kosinix/grafikon/tests/test-imagick.php

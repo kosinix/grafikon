@@ -182,58 +182,58 @@ class Grafikon_ImagickTest extends Grafikon_Test{
         $this->assertLessThanOrEqual(5, $editor->compare($output9, $correct9));
     }
 
-    public function testSmartCrop(){
-        $input = $this->lib . 'tests/in/lena.png';
-        $output = $this->lib . 'tests/out/' . __FUNCTION__ . '1.jpg';
-        $correct = $this->lib . 'tests/assert-imagick/' . __FUNCTION__ . '1.jpg';
+    // public function testSmartCrop(){
+    //     $input = $this->lib . 'tests/in/lena.png';
+    //     $output = $this->lib . 'tests/out/' . __FUNCTION__ . '1.jpg';
+    //     $correct = $this->lib . 'tests/assert-imagick/' . __FUNCTION__ . '1.jpg';
 
-        $editor = Grafikon::createEditor(array("Imagick"));
-        $image = Grafikon_ImagickImage::createFromFile( $input );
-        $editor->crop( $image, 250, 250, 'smart' );
-        $editor->save( $image, $output );
+    //     $editor = Grafikon::createEditor(array("Imagick"));
+    //     $image = Grafikon_ImagickImage::createFromFile( $input );
+    //     $editor->crop( $image, 250, 250, 'smart' );
+    //     $editor->save( $image, $output );
 
-        $this->assertLessThanOrEqual(5, $editor->compare($correct, $output)); // Account for minor variations due to different GD versions (GD image that gen. asserts is different on the testing site)
+    //     $this->assertLessThanOrEqual(5, $editor->compare($correct, $output)); // Account for minor variations due to different GD versions (GD image that gen. asserts is different on the testing site)
 
-        $input = $this->lib . 'tests/in/tower.jpg';
-        $output = $this->lib . 'tests/out/' . __FUNCTION__ . '2.jpg';
-        $correct = $this->lib . 'tests/assert-imagick/' . __FUNCTION__ . '2.jpg';
+    //     $input = $this->lib . 'tests/in/tower.jpg';
+    //     $output = $this->lib . 'tests/out/' . __FUNCTION__ . '2.jpg';
+    //     $correct = $this->lib . 'tests/assert-imagick/' . __FUNCTION__ . '2.jpg';
 
-        $image = Grafikon_ImagickImage::createFromFile( $input );
-        $editor->crop( $image, 260, 400, 'smart' );
-        $editor->save( $image, $output );
+    //     $image = Grafikon_ImagickImage::createFromFile( $input );
+    //     $editor->crop( $image, 260, 400, 'smart' );
+    //     $editor->save( $image, $output );
 
-        $this->assertLessThanOrEqual(5, $editor->compare($correct, $output)); // Account for minor variations due to different GD versions (GD image that gen. asserts is different on the testing site)
+    //     $this->assertLessThanOrEqual(5, $editor->compare($correct, $output)); // Account for minor variations due to different GD versions (GD image that gen. asserts is different on the testing site)
 
-        $input = $this->lib . 'tests/in/portal-companion-cube.jpg';
-        $output = $this->lib . 'tests/out/' . __FUNCTION__ . '3.jpg';
-        $correct = $this->lib . 'tests/assert-imagick/' . __FUNCTION__ . '3.jpg';
+    //     $input = $this->lib . 'tests/in/portal-companion-cube.jpg';
+    //     $output = $this->lib . 'tests/out/' . __FUNCTION__ . '3.jpg';
+    //     $correct = $this->lib . 'tests/assert-imagick/' . __FUNCTION__ . '3.jpg';
 
-        $image = Grafikon_ImagickImage::createFromFile( $input );
-        $editor->crop( $image, 200, 200, 'smart' );
-        $editor->save( $image, $output );
+    //     $image = Grafikon_ImagickImage::createFromFile( $input );
+    //     $editor->crop( $image, 200, 200, 'smart' );
+    //     $editor->save( $image, $output );
 
-        $this->assertLessThanOrEqual(5, $editor->compare($correct, $output)); // Account for minor variations due to different GD versions (GD image that gen. asserts is different on the testing site)
+    //     $this->assertLessThanOrEqual(5, $editor->compare($correct, $output)); // Account for minor variations due to different GD versions (GD image that gen. asserts is different on the testing site)
 
-        $input = $this->lib . 'tests/in/sample.jpg';
-        $output = $this->lib . 'tests/out/' . __FUNCTION__ . '4.jpg';
-        $correct = $this->lib . 'tests/assert-imagick/' . __FUNCTION__ . '4.jpg';
+    //     $input = $this->lib . 'tests/in/sample.jpg';
+    //     $output = $this->lib . 'tests/out/' . __FUNCTION__ . '4.jpg';
+    //     $correct = $this->lib . 'tests/assert-imagick/' . __FUNCTION__ . '4.jpg';
 
-        $image = Grafikon_ImagickImage::createFromFile( $input );
-        $editor->crop( $image, 200, 200, 'smart' );
-        $editor->save( $image, $output );
+    //     $image = Grafikon_ImagickImage::createFromFile( $input );
+    //     $editor->crop( $image, 200, 200, 'smart' );
+    //     $editor->save( $image, $output );
 
-        $this->assertLessThanOrEqual(5, $editor->compare($correct, $output)); // Account for minor variations due to different GD versions (GD image that gen. asserts is different on the testing site)
+    //     $this->assertLessThanOrEqual(5, $editor->compare($correct, $output)); // Account for minor variations due to different GD versions (GD image that gen. asserts is different on the testing site)
 
-        $input = $this->lib . 'tests/in/sample.png';
-        $output = $this->lib . 'tests/out/' . __FUNCTION__ . '5.jpg';
-        $correct = $this->lib . 'tests/assert-imagick/' . __FUNCTION__ . '5.jpg';
+    //     $input = $this->lib . 'tests/in/sample.png';
+    //     $output = $this->lib . 'tests/out/' . __FUNCTION__ . '5.jpg';
+    //     $correct = $this->lib . 'tests/assert-imagick/' . __FUNCTION__ . '5.jpg';
 
-        $image = Grafikon_ImagickImage::createFromFile( $input );
-        $editor->crop( $image, 200, 200, 'smart' );
-        $editor->save( $image, $output );
+    //     $image = Grafikon_ImagickImage::createFromFile( $input );
+    //     $editor->crop( $image, 200, 200, 'smart' );
+    //     $editor->save( $image, $output );
 
-        $this->assertLessThanOrEqual(5, $editor->compare($correct, $output)); // Account for minor variations due to different GD versions (GD image that gen. asserts is different on the testing site)
-    }
+    //     $this->assertLessThanOrEqual(5, $editor->compare($correct, $output)); // Account for minor variations due to different GD versions (GD image that gen. asserts is different on the testing site)
+    // }
 }
 
 Grafikon_Test::run($lib, 'Grafikon_ImagickTest');
