@@ -63,24 +63,6 @@ class Grafikon {
     }
 
     /**
-     * Creates the first available editor.
-     *
-     * @param array $editorList Array of editor list names. Use this to change the order of evaluation for editors. Default order of evaluation is Imagick then GD.
-     *
-     * @return Grafikon_EditorInterface
-     * @throws Exception
-     */
-    public static function createEditor($editorList = array('Imagick', 'Gd'))
-    {
-        $editorName = self::detectAvailableEditor($editorList);
-        if ('Imagick' === $editorName) {
-            return new Grafikon_ImagickEditor();
-        } else {
-            return new Grafikon_GdEditor();
-        }
-    }
-
-    /**
      * Detects and return the first supported editor which can either be Imagick or Gd.
      *
      * @param array $editorList Array of editor list names. Use this to change the order of evaluation for editors for this function call only. Default order of evaluation is Imagick then GD.
@@ -88,7 +70,7 @@ class Grafikon {
      * @return Grafikon_EditorInterface
      * @throws Exception Throws exception if there are no supported editors.
      */
-    public static function getAvailableEditor($editorList = null)
+    public static function createEditor($editorList = null)
     {
 
         if(null === $editorList){
@@ -112,6 +94,23 @@ class Grafikon {
     }
 
     /**
+     * Create an image.
+     * @param string $imageFile Path to image file.
+     *
+     * @return Grafikon_ImageInterface
+     * @throws Exception
+     */
+    public static function createImage($imageFile)
+    {
+        $editorName = self::detectAvailableEditor();
+        if ('Imagick' === $editorName) {
+            return Grafikon_ImagickImage::createFromFile($imageFile);
+        } else {
+            return Grafikon_GdImage::createFromFile($imageFile);
+        }
+    }
+
+    /**
      * Open an image file.
      *
      * @param string $path Full path to image file.
@@ -120,7 +119,7 @@ class Grafikon {
      */
     public static function open($path){
 
-        $editor = self::getAvailableEditor();
+        $editor = self::createEditor();
         
         return $editor->open($path);
 
@@ -135,7 +134,7 @@ class Grafikon {
      * @return int Hamming distance. Note: This breaks the chain if you are doing fluent api calls as it does not return an Editor.
      */
     public static function compare($image1, $image2) {
-        $editor = self::getAvailableEditor();
+        $editor = self::createEditor();
         
         return $editor->compare($image1, $image2);
     }
@@ -151,7 +150,7 @@ class Grafikon {
      * @param int $offsetY Number of pixels to add to the Y position of the crop.
      */
     public static function crop( &$image, $cropWidth, $cropHeight, $position = 'center', $offsetX = 0, $offsetY = 0) {
-        $editor = self::getAvailableEditor();
+        $editor = self::createEditor();
 
         $editor->crop( $image, $cropWidth, $cropHeight, $position, $offsetX, $offsetY);
     }
@@ -165,7 +164,7 @@ class Grafikon {
      * @param string $mode Resize mode. Possible values: "exact", "exactHeight", "exactWidth", "fill", "fit".
      */
     public static function resize(&$image, $newWidth, $newHeight, $mode = 'fit') {
-        $editor = self::getAvailableEditor();
+        $editor = self::createEditor();
 
         $editor->resize($image, $newWidth, $newHeight, $mode);
     }
@@ -184,7 +183,7 @@ class Grafikon {
      * @throws Exception
      */
     public static function save($image, $file, $type = null, $quality = null, $interlace = false, $permission = 0755){
-        $editor = self::getAvailableEditor();
+        $editor = self::createEditor();
         return $editor->save($image, $file, $type, $quality, $interlace, $permission);
     }
 }
