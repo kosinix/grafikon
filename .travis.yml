@@ -11,6 +11,7 @@ php:
 
 matrix:
     allow_failures:
+      - php: 5.2
 
 branches:
   only:
@@ -20,9 +21,6 @@ branches:
 before_install:
   - sudo apt-get update
   - sudo apt-get -y --reinstall install imagemagick
-  - if [[ ${TRAVIS_PHP_VERSION:0:3} == "5.2" ]]; then `phpenv global 5.3`; fi 
-  - composer update
-  - if [[ ${TRAVIS_PHP_VERSION:0:3} == "5.2" ]]; then `phpenv global "$TRAVIS_PHP_VERSION"`; fi
   - if [[ ${TRAVIS_PHP_VERSION:0:3} == "5.2" ]]; then printf "\n" | pecl install imagick-3.1.2; fi
   - if [[ ${TRAVIS_PHP_VERSION:0:3} == "5.3" ]]; then printf "\n" | pecl install imagick-3.3.0; fi
   - if [[ ${TRAVIS_PHP_VERSION:0:3} == "5.4" ]]; then printf "\n" | pecl install imagick-3.3.0; fi
