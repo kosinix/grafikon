@@ -49,7 +49,7 @@ class Grafikon_ImagickTest extends Grafikon_Test{
 
         $editor = Grafikon::createEditor(array("Imagick"));
 
-        $image = Grafikon::open($input);
+        $image = $editor->open($input);
         $editor->save($image, $output1, 'jpg', 100);
         $this->assertEquals(0, $editor->compare($input, $output1));
 
