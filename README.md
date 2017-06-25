@@ -15,13 +15,12 @@ A smaller subset of [Grafika](https://kosinix.github.io/grafika) that works in P
 
 ## Usage
 
-`
-require_once 'src/autoloader.php';
+    require_once 'src/autoloader.php';
 
-$editor = Grafikon::createEditor(); // Will try and create Imagick editor or fallback to GD
-$image = $editor->open('image.jpeg');
-$editor->resize($image, 200, 100, 'fit');
-$editor->save('out.png');
+	$editor = Grafikon::createEditor(); // Will try and create Imagick editor or fallback to GD
+	$image = $editor->open('image.jpeg');
+	$editor->resize($image, 200, 100, 'fit');
+	$editor->save('out.png');
 
 `
 
