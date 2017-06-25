@@ -16,9 +16,10 @@ branches:
   - develop
 
 before_install:
+  - apt-cache policy imagemagick
   - if [[ ${TRAVIS_PHP_VERSION:0:3} == "5.2" ]]; then printf "\n" | pecl install -f imagick-3.1.2; fi
   - if [[ ${TRAVIS_PHP_VERSION:0:3} == "5.3" ]]; then printf "\n" | pecl install -f imagick-3.3.0; fi
-  - if [[ ${TRAVIS_PHP_VERSION:0:3} == "5.4" ]]; then printf "\n" | pecl install imagick; fi
+  - if [[ ${TRAVIS_PHP_VERSION:0:3} == "5.4" ]]; then printf "\n" | pecl install -f imagick-3.4.3; fi
 
 before_script:
   - sudo mkdir -p /home/travis/build/kosinix/grafikon/tests/out
