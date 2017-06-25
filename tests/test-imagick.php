@@ -103,84 +103,84 @@ class Grafikon_ImagickTest extends Grafikon_Test{
         $this->assertLessThanOrEqual(5, $editor->compare($output, $correct));
     }
 
-    public function testCrop(){
-        $input   = $this->lib . 'tests/in/crop-test.jpg';
+    // public function testCrop(){
+    //     $input   = $this->lib . 'tests/in/crop-test.jpg';
 
-        $output1  = $this->lib . 'tests/out/' . __FUNCTION__ . '1.jpg';
-        $correct1 = $this->lib . 'tests/assert-imagick/' . __FUNCTION__ . '1.jpg';
+    //     $output1  = $this->lib . 'tests/out/' . __FUNCTION__ . '1.jpg';
+    //     $correct1 = $this->lib . 'tests/assert-imagick/' . __FUNCTION__ . '1.jpg';
 
-        $output2  = $this->lib . 'tests/out/' . __FUNCTION__ . '2.jpg';
-        $correct2 = $this->lib . 'tests/assert-imagick/' . __FUNCTION__ . '2.jpg';
+    //     $output2  = $this->lib . 'tests/out/' . __FUNCTION__ . '2.jpg';
+    //     $correct2 = $this->lib . 'tests/assert-imagick/' . __FUNCTION__ . '2.jpg';
 
-        $output3  = $this->lib . 'tests/out/' . __FUNCTION__ . '3.jpg';
-        $correct3 = $this->lib . 'tests/assert-imagick/' . __FUNCTION__ . '3.jpg';
+    //     $output3  = $this->lib . 'tests/out/' . __FUNCTION__ . '3.jpg';
+    //     $correct3 = $this->lib . 'tests/assert-imagick/' . __FUNCTION__ . '3.jpg';
 
-        $output4  = $this->lib . 'tests/out/' . __FUNCTION__ . '4.jpg';
-        $correct4 = $this->lib . 'tests/assert-imagick/' . __FUNCTION__ . '4.jpg';
+    //     $output4  = $this->lib . 'tests/out/' . __FUNCTION__ . '4.jpg';
+    //     $correct4 = $this->lib . 'tests/assert-imagick/' . __FUNCTION__ . '4.jpg';
 
-        $output5  = $this->lib . 'tests/out/' . __FUNCTION__ . '5.jpg';
-        $correct5 = $this->lib . 'tests/assert-imagick/' . __FUNCTION__ . '5.jpg';
+    //     $output5  = $this->lib . 'tests/out/' . __FUNCTION__ . '5.jpg';
+    //     $correct5 = $this->lib . 'tests/assert-imagick/' . __FUNCTION__ . '5.jpg';
 
-        $output6  = $this->lib . 'tests/out/' . __FUNCTION__ . '6.jpg';
-        $correct6 = $this->lib . 'tests/assert-imagick/' . __FUNCTION__ . '6.jpg';
+    //     $output6  = $this->lib . 'tests/out/' . __FUNCTION__ . '6.jpg';
+    //     $correct6 = $this->lib . 'tests/assert-imagick/' . __FUNCTION__ . '6.jpg';
 
-        $output7  = $this->lib . 'tests/out/' . __FUNCTION__ . '7.jpg';
-        $correct7 = $this->lib . 'tests/assert-imagick/' . __FUNCTION__ . '7.jpg';
+    //     $output7  = $this->lib . 'tests/out/' . __FUNCTION__ . '7.jpg';
+    //     $correct7 = $this->lib . 'tests/assert-imagick/' . __FUNCTION__ . '7.jpg';
 
-        $output8  = $this->lib . 'tests/out/' . __FUNCTION__ . '8.jpg';
-        $correct8 = $this->lib . 'tests/assert-imagick/' . __FUNCTION__ . '8.jpg';
+    //     $output8  = $this->lib . 'tests/out/' . __FUNCTION__ . '8.jpg';
+    //     $correct8 = $this->lib . 'tests/assert-imagick/' . __FUNCTION__ . '8.jpg';
 
-        $output9  = $this->lib . 'tests/out/' . __FUNCTION__ . '9.jpg';
-        $correct9 = $this->lib . 'tests/assert-imagick/' . __FUNCTION__ . '9.jpg';
+    //     $output9  = $this->lib . 'tests/out/' . __FUNCTION__ . '9.jpg';
+    //     $correct9 = $this->lib . 'tests/assert-imagick/' . __FUNCTION__ . '9.jpg';
 
-        $editor = Grafikon::createEditor(array("Imagick"));
-        $image = Grafikon_ImagickImage::createFromFile( $input );
-        $editor->crop( $image, 260, 150, 'top-left' );
-        $editor->save( $image, $output1);
+    //     $editor = Grafikon::createEditor(array("Imagick"));
+    //     $image = Grafikon_ImagickImage::createFromFile( $input );
+    //     $editor->crop( $image, 260, 150, 'top-left' );
+    //     $editor->save( $image, $output1);
 
-        $this->assertLessThanOrEqual(5, $editor->compare($output1, $correct1));
+    //     $this->assertLessThanOrEqual(5, $editor->compare($output1, $correct1));
 
-        $image = Grafikon_ImagickImage::createFromFile( $input );
-        $editor->crop( $image, 260, 150, 'top-center' );
-        $editor->save( $image, $output2);
-        $this->assertLessThanOrEqual(5, $editor->compare($output2, $correct2));
+    //     $image = Grafikon_ImagickImage::createFromFile( $input );
+    //     $editor->crop( $image, 260, 150, 'top-center' );
+    //     $editor->save( $image, $output2);
+    //     $this->assertLessThanOrEqual(5, $editor->compare($output2, $correct2));
 
-        $image = Grafikon_ImagickImage::createFromFile( $input );
-        $editor->crop( $image, 260, 150, 'top-right' );
-        $editor->save( $image, $output3);
-        $this->assertLessThanOrEqual(5, $editor->compare($output3, $correct3));
+    //     $image = Grafikon_ImagickImage::createFromFile( $input );
+    //     $editor->crop( $image, 260, 150, 'top-right' );
+    //     $editor->save( $image, $output3);
+    //     $this->assertLessThanOrEqual(5, $editor->compare($output3, $correct3));
 
-        //
-        $image = Grafikon_ImagickImage::createFromFile( $input );
-        $editor->crop( $image, 260, 150, 'center-left' );
-        $editor->save( $image, $output4);
-        $this->assertLessThanOrEqual(5, $editor->compare($output4, $correct4));
+    //     //
+    //     $image = Grafikon_ImagickImage::createFromFile( $input );
+    //     $editor->crop( $image, 260, 150, 'center-left' );
+    //     $editor->save( $image, $output4);
+    //     $this->assertLessThanOrEqual(5, $editor->compare($output4, $correct4));
 
-        $image = Grafikon_ImagickImage::createFromFile( $input );
-        $editor->crop( $image, 260, 150, 'center' );
-        $editor->save( $image, $output5);
-        $this->assertLessThanOrEqual(5, $editor->compare($output5, $correct5));
+    //     $image = Grafikon_ImagickImage::createFromFile( $input );
+    //     $editor->crop( $image, 260, 150, 'center' );
+    //     $editor->save( $image, $output5);
+    //     $this->assertLessThanOrEqual(5, $editor->compare($output5, $correct5));
 
-        $image = Grafikon_ImagickImage::createFromFile( $input );
-        $editor->crop( $image, 260, 150, 'center-right' );
-        $editor->save( $image, $output6);
-        $this->assertLessThanOrEqual(5, $editor->compare($output6, $correct6));
-        //
-        $image = Grafikon_ImagickImage::createFromFile( $input );
-        $editor->crop( $image, 260, 150, 'bottom-left' );
-        $editor->save( $image, $output7);
-        $this->assertLessThanOrEqual(5, $editor->compare($output7, $correct7));
+    //     $image = Grafikon_ImagickImage::createFromFile( $input );
+    //     $editor->crop( $image, 260, 150, 'center-right' );
+    //     $editor->save( $image, $output6);
+    //     $this->assertLessThanOrEqual(5, $editor->compare($output6, $correct6));
+    //     //
+    //     $image = Grafikon_ImagickImage::createFromFile( $input );
+    //     $editor->crop( $image, 260, 150, 'bottom-left' );
+    //     $editor->save( $image, $output7);
+    //     $this->assertLessThanOrEqual(5, $editor->compare($output7, $correct7));
 
-        $image = Grafikon_ImagickImage::createFromFile( $input );
-        $editor->crop( $image, 260, 150, 'bottom-center' );
-        $editor->save( $image, $output8);
-        $this->assertLessThanOrEqual(5, $editor->compare($output8, $correct8));
+    //     $image = Grafikon_ImagickImage::createFromFile( $input );
+    //     $editor->crop( $image, 260, 150, 'bottom-center' );
+    //     $editor->save( $image, $output8);
+    //     $this->assertLessThanOrEqual(5, $editor->compare($output8, $correct8));
 
-        $image = Grafikon_ImagickImage::createFromFile( $input );
-        $editor->crop( $image, 260, 150, 'bottom-right' );
-        $editor->save( $image, $output9);
-        $this->assertLessThanOrEqual(5, $editor->compare($output9, $correct9));
-    }
+    //     $image = Grafikon_ImagickImage::createFromFile( $input );
+    //     $editor->crop( $image, 260, 150, 'bottom-right' );
+    //     $editor->save( $image, $output9);
+    //     $this->assertLessThanOrEqual(5, $editor->compare($output9, $correct9));
+    // }
 
     // public function testSmartCrop(){
     //     $input = $this->lib . 'tests/in/lena.png';
