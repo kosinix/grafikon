@@ -235,4 +235,27 @@ class Grafikon_GdTest extends Grafikon_Test{
     }
 }
 
-Grafikon_Test::run($lib, 'Grafikon_GdTest');
+$reflectedClass = new ReflectionClass('Grafikon_GdTest');
+$instance = $reflectedClass->newInstance($lib);
+
+echo "Starting test \n";
+echo "PHP version: ".PHP_VERSION." \n\n";
+
+echo $reflectedClass->name."\n";
+echo "Deleting out dir...\n";
+foreach($reflectedClass->getMethods() as $method){
+    
+    if(substr($method->name, 0, 4) === 'test'){
+        echo " \n {$method->name}... ";
+        $method->invoke($instance);
+    }
+}
+
+echo "\n\n";
+if($instance->fail === 0 ){
+    echo "Test result: OK\n";
+    exit(0);
+} else {
+    echo "Test result: FAILED\n";
+    exit(1);
+}

@@ -67,45 +67,4 @@ abstract class Grafikon_Test {
         }
     }
 
-    public static function run($lib, $className){
-        $reflectedClass = new ReflectionClass($className);
-        $instance = $reflectedClass->newInstance($lib);
-
-        echo "Starting test \n";
-        echo "PHP version: ".PHP_VERSION." \n\n";
-
-        echo $reflectedClass->name."\n";
-        echo "Deleting out dir...\n";
-        self::rmdirRecursive($lib.'tests/out');
-        foreach($reflectedClass->getMethods() as $method){
-            
-            if(substr($method->name, 0, 4) === 'test'){
-                echo " \n {$method->name}... ";
-                $method->invoke($instance);
-            }
-        }
-
-        echo "\n\n";
-        if($instance->fail === 0 ){
-            echo "Test result: OK\n";
-            exit(0);
-        } else {
-            echo "Test result: FAILED\n";
-            exit(1);
-        }
-    }
-
-    public static function rmdirRecursive($dir) {
-        foreach (scandir($dir) as $file) {
-            if ('.' === $file || '..' === $file) {
-                continue;
-            }
-            if (is_dir("$dir/$file")) {
-                rmdirRecursive("$dir/$file");
-            } else {
-                unlink("$dir/$file");
-            }
-        }
-        return rmdir($dir);
-    }
 }
