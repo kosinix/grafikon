@@ -3,6 +3,7 @@ env:
   - LIB_DIR="/home/travis/build/kosinix/grafikon/"
 php:
   - 5.2
+  - 5.3
   
 matrix:
     allow_failures:
@@ -15,6 +16,7 @@ branches:
 
 before_install:
   - if [[ ${TRAVIS_PHP_VERSION:0:3} == "5.2" ]]; then printf "\n" | pecl install -f imagick-3.1.2; fi
+  - if [[ ${TRAVIS_PHP_VERSION:0:3} == "5.3" ]]; then printf "\n" | pecl install imagick; fi
 
 before_script:
   - sudo mkdir -p /home/travis/build/kosinix/grafikon/tests/out
