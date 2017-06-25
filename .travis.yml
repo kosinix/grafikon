@@ -3,12 +3,7 @@ env:
   - LIB_DIR="/home/travis/build/kosinix/grafikon/"
 php:
   - 5.2
-  - 5.3
-  - 5.4
-  - 5.5
-  - 5.6
-  - 7.0
-
+  
 matrix:
     allow_failures:
       - php: 5.2
@@ -19,18 +14,9 @@ branches:
   - develop
 
 before_install:
-  - sudo apt-get update
-  - sudo apt-get -y --reinstall install imagemagick
-  - if [[ ${TRAVIS_PHP_VERSION:0:3} == "5.2" ]]; then printf "\n" | pecl install imagick-3.1.2; fi
-  - if [[ ${TRAVIS_PHP_VERSION:0:3} == "5.3" ]]; then printf "\n" | pecl install imagick-3.3.0; fi
-  - if [[ ${TRAVIS_PHP_VERSION:0:3} == "5.4" ]]; then printf "\n" | pecl install imagick-3.3.0; fi
-  - if [[ ${TRAVIS_PHP_VERSION:0:3} == "5.5" ]]; then printf "\n" | pecl install imagick-3.3.0; fi
-  - if [[ ${TRAVIS_PHP_VERSION:0:3} == "5.6" ]]; then printf "\n" | pecl install imagick-3.3.0; fi
-  - if [[ ${TRAVIS_PHP_VERSION:0:3} == "7.0" ]]; then printf "\n" | pecl install imagick-beta; fi
+  - if [[ ${TRAVIS_PHP_VERSION:0:3} == "5.2" ]]; then printf "\n" | pecl install -f imagick-3.1.2; fi
 
 before_script:
-  - composer self-update
-  - composer install --prefer-source --no-interaction --dev
   - sudo mkdir -p /home/travis/build/kosinix/grafikon/tests/out
   - sudo chmod -R 0777 /home/travis/build/kosinix/grafikon/tests/
   - if [[ ${TRAVIS_PHP_VERSION:0:3} == "7.0" ]]; then phpenv config-rm xdebug.ini; fi
