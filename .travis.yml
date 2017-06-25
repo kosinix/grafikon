@@ -26,8 +26,7 @@ before_install:
   - if [[ ${TRAVIS_PHP_VERSION:0:3} == "5.4" ]]; then printf "\n" | pecl install -f imagick-3.4.3; fi
   - if [[ ${TRAVIS_PHP_VERSION:0:3} == "5.5" ]]; then printf "\n" | pecl install -f imagick-3.4.3; fi
   - if [[ ${TRAVIS_PHP_VERSION:0:3} == "5.6" ]]; then printf "\n" | pecl install -f imagick-3.4.3; fi
-  - if [[ ${TRAVIS_PHP_VERSION:0:3} == "7.0" ]]; then printf "\n" | pecl install -f imagick-3.4.3; fi
-  - if [[ ${TRAVIS_PHP_VERSION:0:3} == "7.1" ]]; then printf "\n" | pecl install -f imagick-3.4.3; fi
+  - if [[ ${TRAVIS_PHP_VERSION:0:3} == "7.0" ]]; then printf "\n" | pecl install -f imagick-beta; fi
 
 before_script:
   - sudo rm -rf /home/travis/build/kosinix/grafikon/tests/out
